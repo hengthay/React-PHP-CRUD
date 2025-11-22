@@ -40,3 +40,27 @@ The `ListUser` component displays all users in a table.
 ```javascript
 axios.get('http://localhost:8080/react-api/api/listdata.php')
   .then(response => setUsers(response.data));
+```
+
+## UpdateUser
+
+The `UpdateUser` component allows editing an existing user's data.
+
+- **Frontend file:** [`UpdateUser.js`](./mnt/data/90078256-c466-4c84-b99d-b904c988f099.png)
+- **Form fields:** `first_name`, `last_name`, `age`
+- **Functionality:**
+  - Fetches the current user data using `axios.get` by user ID.
+  - Pre-fills the form with existing user data.
+  - Submits updated data to the backend using `axios.put`.
+  - Navigates back to the list of users after successful update.
+
+- **Backend request example:**
+```javascript
+axios.put(`http://localhost:8080/react-api/api/listdata.php?id=${id}`, {
+  first_name: update.first_name,
+  last_name: update.last_name,
+  age: update.age
+}, {
+  headers: { 'Content-Type': 'application/json' }
+});
+```
