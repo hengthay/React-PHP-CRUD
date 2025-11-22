@@ -23,3 +23,18 @@ The `CreateUser` component allows you to add a new user.
   "last_name": "Doe",
   "age": "25"
 }
+
+## 2. ListUser
+
+The `ListUser` component displays all users in a table.
+
+- **Frontend file:** [`ListUser.js`](./mnt/data/90078256-c466-4c84-b99d-b904c988f099.png)
+- **Functionality:**
+  - Fetches all users from the backend using `axios.get`.
+  - Displays users in a table with columns: `ID`, `First Name`, `Last Name`, `Age`, and `Action`.
+  - Each row includes **Update** and **Delete** buttons that link to the respective components.
+
+- **Backend request example:**
+```javascript
+axios.get('http://localhost:8080/react-api/api/listdata.php')
+  .then(response => setUsers(response.data));
