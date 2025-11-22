@@ -24,6 +24,8 @@ The `CreateUser` component allows you to add a new user.
   "age": "25"
 }
 
+```
+
 ## 2. ListUser
 
 The `ListUser` component displays all users in a table.
